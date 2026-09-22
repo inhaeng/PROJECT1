@@ -1,0 +1,16 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-YDIR
+/GPDK045/digital/giolib045_v3.5/vlog
+-YDIR
+/GPDK045/digital//gsclib045_all_v4.4/gsclib045_svt_v4.4/gsclib045/verilog
+-YDIR
+/GPDK045/digital
+-DEFINE
+function_sim
+-LIBEXT
+.v
+-INCDIR
+../TESTBENCH
