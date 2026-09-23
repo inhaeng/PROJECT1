@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module uart_tx_tb;
+module tb_uart_tx;
 
 
 // input
@@ -36,6 +36,13 @@ u_uart_tx(
     .o_tx_done  (o_tx_done  )
 );
 
+// Dumpfile gen
+`ifdef function_sim 
+	initial begin
+		$dumpfile("./dump/uart_tx.vcd")			;
+		$dumpvars(0, tb_uart_tx)			;
+	end
+`endif
 
 // 48 MHz clock
 // 1 / 48 MHz = 20.833 ns
