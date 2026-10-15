@@ -10,7 +10,7 @@ puts "Hostname : [info hostname]"
 # Preset global variables and attributes
 ######################################################################
 
-set TOP_DESIGN  cmsdk_mcu
+set TOP_DESIGN  uart_top
 
 set LOG_DIR     "./log"
 set RPT_DIR     "./report"
