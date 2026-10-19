@@ -65,7 +65,7 @@ elaborate ${TOP_DESIGN}
 puts "Runtime & Memory after 'read_hdl'"
 time_info Elaboration
 
-set_db hinst:u_cmsdk_mcu_system .preserve true
+#set_db hinst:u_cmsdk_mcu_system .preserve true
 set_db optimize_merge_flops false
 set_db optimize_merge_latches false
 

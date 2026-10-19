@@ -120,11 +120,11 @@ set_dont_touch [get_cells u_pad_rx_done]
 
 # Generate PAD arrays
 for {set i 0} {$i < 8} {incr i} {
-    set_dont_touch [get_cells \
-        "GEN_TX_DATA_PAD\\[$i\\].u_pad_tx_data"]
+	set tx_path [format {GEN_TX_DATA_PAD[%d].u_pad_tx_data} $i]
+	set rx_path [format {GEN_RX_DATA_PAD[%d].u_pad_rx_data} $i]
 
-    set_dont_touch [get_cells \
-        "GEN_RX_DATA_PAD\\[$i\\].u_pad_rx_data"]
+	set_dont_touch [get_cells $tx_path]
+	set_dont_touch [get_cells $rx_path]
 }
 
 # Below is no use in Genus tool
