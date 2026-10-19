@@ -50,9 +50,6 @@ PADDI u_pad_uart_rx (
     .Y   (w_uart_rx)
 );
 
-//========= Temporary assign ======================
-assign w_uart_tx = w_uart_rx;
-
 
 //==================================================
 // Output PAD
@@ -68,14 +65,14 @@ PADDO u_pad_uart_tx (
 // UART Core
 //==================================================
 
-// UART RTL 완성 후 연결
-//
-// uart u_uart (
-//     .clk   (w_clk),
-//     .rst_n (w_rst_n),
-//     .rx    (w_uart_rx),
-//     .tx    (w_uart_tx)
-// );
+UART RTL 완성 후 연결
+
+uart u_uart (
+    .clk   (w_clk),
+    .rst_n (w_rst_n),
+    .rx    (w_uart_rx),
+    .tx    (w_uart_tx)
+);
 
 
 endmodule
