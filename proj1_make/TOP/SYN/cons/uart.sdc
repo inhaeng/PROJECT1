@@ -101,11 +101,31 @@ set_operating_conditions  -max_library [get_libs slow_vdd1v0_basicCells.lib:slow
 #                                 #
 ###################################
 
-#set_dont_touch u_cmsdk_mcu_system
-set_dont_touch u_pad_clk 
-set_dont_touch u_pad_rst_n 
-set_dont_touch u_pad_uart_rx 
-set_dont_touch u_pad_uart_tx
+###################################
+# PAD INSTANCE DONT TOUCH
+###################################
+
+# Input PAD
+set_dont_touch [get_cells u_pad_clk]
+set_dont_touch [get_cells u_pad_rst_n]
+set_dont_touch [get_cells u_pad_uart_rx]
+set_dont_touch [get_cells u_pad_tx_start]
+
+# Output PAD
+set_dont_touch [get_cells u_pad_uart_tx]
+set_dont_touch [get_cells u_pad_tx_busy]
+set_dont_touch [get_cells u_pad_tx_done]
+set_dont_touch [get_cells u_pad_rx_busy]
+set_dont_touch [get_cells u_pad_rx_done]
+
+# Generate PAD arrays
+for {set i 0} {$i < 8} {incr i} {
+    set_dont_touch [get_cells \
+        "GEN_TX_DATA_PAD\\[$i\\].u_pad_tx_data"]
+
+    set_dont_touch [get_cells \
+        "GEN_RX_DATA_PAD\\[$i\\].u_pad_rx_data"]
+}
 
 # Below is no use in Genus tool
 #set_isolate_ports [all_outputs]

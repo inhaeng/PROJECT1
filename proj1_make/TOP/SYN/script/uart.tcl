@@ -32,6 +32,7 @@ set QRC_LIST {gpdk045.tch}
 
 set RTL_SOURCES "../RTL/uart_top.v \
 		../RTL/uart_tx.v \
+    ../RTL/uart_rx.v \
 "
 set_db auto_ungroup none
 set_db max_cpus_per_server 2
